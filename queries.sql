@@ -5,7 +5,7 @@ SELECT * FROM animals
 where date_of_birth BETWEEN '2016-01-01' AND '2019-12-31';
 
 SELECT * FROM animals
-where neutered = true AND escape_attempts <= 3;
+where neutered = true AND escape_attempts < 3;
 
 SELECT date_of_birth FROM animals
 where name = 'Agumon' OR name = 'Pikachu';
