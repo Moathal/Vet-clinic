@@ -1,5 +1,10 @@
-/* Database schema to keep the structure of entire database. */
+DROP TABLE IF EXISTS animals;
 
 CREATE TABLE animals (
-    name varchar(100)
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	date_of_birth date NOT NULL,
+	escape_attempts INT NOT NULL,
+	neutered Boolean,
+	weight_kg DECIMAL
 );
