@@ -21,3 +21,23 @@ WHERE NOT name = 'Gabumon';
 
 SELECT * FROM animals
 WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
+
+BEGIN;
+UPDATE animals SET species = 'unspecified';
+select * from animals;
+RollBack;
+
+BEGIN;
+UPDATE animals SET species = (CASE
+WHEN name LIKE '%mon' THEN 'digimon'
+ELSE 'pokemon'
+END);
+SELECT * FROM animals
+ORDER BY id;
+COMMIT;
+
+BEGIN;
+DELETE FROM animals;
+SELECT * FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
